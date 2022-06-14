@@ -1,7 +1,6 @@
-<h2>
-    <a href="/">Inicio</a>
-    <a href="/contacto">Contactanos</a>
-</h2>
+{% extends "inicio/encabezado.html"%}
+{%block titulo%}Contenido{% endblock %}
+{% block contenido%}
 
 <h2>Registrar</h2>
 <p>matricula:
@@ -19,4 +18,5 @@
 <input type="radio" name="turno" value="matutino" /> matutino
 <input type="radio" name="turno" value="vespertino" /> vespertino
 <p><input type="button" name="Enviar" value="Enviar"></p>
-</p>
+</p> 
+{%endblock%}
