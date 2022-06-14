@@ -1,10 +1,8 @@
 from django.shortcuts import render,HttpResponse
 
-menu="""<h2>
-<a href="/">Inicio</a>
- <a href="/contacto">Contactanos</a></h2>"""
-
 # Create your views here.
 def principal(request):
-    contenido="<h1>HOLA DJANGO</h1>"
-    return HttpResponse(menu+contenido)
+    return render(request,'inicio/principal.html')
+
+def contacto(request):
+    return render(request,"inicio/contacto.html")
