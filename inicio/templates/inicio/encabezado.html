@@ -66,7 +66,6 @@
                     <img src="{%block imagen%}{%endblock%}" >
                     <div class="user-info">
 						{%block nombre%}{%endblock%}
-                       
                     </div>
                 </a>
             </div>
@@ -87,10 +86,45 @@
 
     <!-- CONTENIDO -->
 
+	<!-- Contenido Principal-->
+<div class="page-content">
+
+
+    <!--Encabezdo -->
+    <div class="page-header">
+        <div class="page-title">
+            <h3>Alumnos<br>
+            <small>Lista de Alumnos 9A</small></h3>
+        </div>
+        
+    </div>
+    <!-- /Encabezado-->
+
+	<!-- barra de navegación-->
+	<div class="breadcrum-line">
+		<ul class="breadcrumb">
+			<a href="{%url 'Principal'%}">
+				{% if request.path == '/'%}
+				Principal
+				{%else%}
+				Principal{{request.path}}
+				{%endif%}
+			</a>
+		</ul>
+
+
+	</div>
+	<!-- /barra de navegación-->
+
+</div>
+<!-- /Contenido Principal-->
+
 {% block contenido %} <!--Template Tag-->
 
 <!--block sirve para indicar que colocaremos un bloque de
 contenido a través de nuestra variable content -->
+
+
 
 {% endblock %}
 </body>
