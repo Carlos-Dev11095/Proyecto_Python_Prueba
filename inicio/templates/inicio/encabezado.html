@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>{%block NombrePestaña%} Ejemplo {%endblock%}</title>
+<title>{%block NombrePestaña%}{%endblock%}</title>
 
 {%load static%}
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
@@ -51,14 +51,8 @@
 </head>
 
 <body>
-
-	
-
- 	<div class="page-container">
-
-
+	<div class="page-container">
 		<!-- Barra de menú -->
-
 		<div class="sidebar">
             <!-- imagen de usuario-->
             <div class="user-menu dropdown">
@@ -69,10 +63,9 @@
                     </div>
                 </a>
             </div>
-<!-- /imagen de usuario-->
+			<!-- /imagen de usuario-->
+			<!-- Menú de navegación -->
 			<div class="sidebar-content">
-				<!-- Menú de navegación -->
-
 				<ul class="navigation">
 							<li><a href="{%url 'Principal'%}">Principal</a></li>
 							<li><a href="{%url 'Formulario'%}">Registro</a></li>
@@ -82,24 +75,12 @@
 			</div>
 		</div>
 		<!-- /sidebar -->
-	</div>
+		<!-- Contenido Principal-->
+		<div class="page-content">
 
-    <!-- CONTENIDO -->
-
-	<!-- Contenido Principal-->
-<div class="page-content">
-
-
-    <!--Encabezdo -->
-    <div class="page-header">
-        <div class="page-title">
-            <h3>Alumnos<br>
-            <small>Lista de Alumnos 9A</small></h3>
-        </div>
-        
-    </div>
-    <!-- /Encabezado-->
-
+{%block Encabezado%}
+   
+{%endblock%}
 	<!-- barra de navegación-->
 	<div class="breadcrum-line">
 		<ul class="breadcrumb">
@@ -115,7 +96,7 @@
 
 	</div>
 	<!-- /barra de navegación-->
-
+ <!-- CONTENIDO -->
 </div>
 <!-- /Contenido Principal-->
 

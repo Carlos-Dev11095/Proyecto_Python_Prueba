@@ -1,13 +1,26 @@
 {%extends "inicio/encabezado.html"%}
 
 {%block NombrePestaña%}Formulario{% endblock %}
+{%load static%}
 
 {%block imagen%}
-{%load static%}
 {%static 'inicio/images/registro.png'%}
 {%endblock%}
+
 {%block tituloMenu%}
 Formulario <span>DSM</span>
+{%endblock%}
+
+{%block Encabezado%}
+ <!--Encabezado -->
+ <div class="page-header">
+    <div class="page-title">
+        <h3>Registro<br>
+        <small>Lista de Alumnos 9A</small></h3>
+    </div>
+    
+</div>
+<!-- /Encabezado-->
 {%endblock%}
 
 {%block contenido%}

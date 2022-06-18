@@ -1,18 +1,29 @@
 {% extends "inicio/encabezado.html"%}
 
 {%block NombrePestaña%}Contacto{% endblock %}
-{%block imagen%}
 {%load static%}
+
+{%block imagen%}
 {%static 'inicio/images/correo.png'%}
 {%endblock%}
+
 {%block tituloMenu%}
 Contacto <span>DSM</span>
 {%endblock%}
 
+{%block Encabezado%}
+ <!--Encabezado -->
+ <div class="page-header">
+    <div class="page-title">
+        <h3>Contacto<br>
+        <small>Lista de Alumnos 9A</small></h3>
+    </div>
+    
+</div>
+<!-- /Encabezado-->
+{%endblock%}
+
 {% block contenido%}
-
-
-
 <!-- Contenido Principal-->
 <div class="page-content">
 
