@@ -1,21 +1,23 @@
+from msilib.schema import Class
+from tabnanny import verbose
 from django.db import models
 
-# Create your models here.
-
-class alumnos(models.Model):#define la estructura de nuestra tabla
-    matricula= models.CharField(max_length=12,verbose_name="Mat") #texto corto
-    nombre = models.TextField()#texto largo
+class Alumnos(models.Model): #Define la estructura de nuestra tabla
+    matricula = models.CharField(max_length=12,verbose_name="Mat") #texto corto
+    nombre = models.TextField() #Texto largo
     carrera = models.TextField()
-    turno = models.CharField(max_length=10)
-    created = models.DateField(auto_now_add=True) #fecha y tiempo
-    update = models.DateField(auto_now_add=True)
+    turno = models.TextField(max_length=10)
+    created = models.DateField(auto_now_add=True) #Fecha y tiempo
+    updated = models.DateField(auto_now_add=True) #Fecha y tiempo
+
+    class Meta:
+        verbose_name = "Alumno"
+        verbose_name_plural = "Alumnos"
+        ordering = ["-created"]
+        #El - indica que se ordena del más reciente al mas viejo
     
-class Meta:
-    verbose_name = "Alumno"
-    verbose_name_plural = "Alumnos"
-    ordering = ["-created"]
-#el menos indica que se ordenara del más reciente al mas viejo
-        
-def __str__(self):
-    return self.nombre
-#Indica que se mostrára el nombre como valor en la tabla
+    def __str__(self):
+        return self.nombre
+        #Indica que se mostrará el nombre como valor de la tabla
+
+
