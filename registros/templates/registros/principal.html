@@ -35,15 +35,17 @@ Principal <span>DSM</span>
     </tr>
     </thead>
     <tbody>
+        {% for alumno in alumnos %}
         <tr>
         <td class="text-center">
-        <img src="" alt="" class="img-media">
+        <img src="{{alumno.imagen.url}}" alt="" class="img-media">
         </td>
-        <td class="text-semibold">UTM1234TIC</td>
-        <td class="muted">Nathalia</td>
-        <td class="muted">Tic</td>
-        <td class="muted">Matutino</td>
+        <td class="text-semibold">{{alumno.matricula}}</td>
+        <td class="muted">{{alumno.nombre}}</td>
+        <td class="muted">{{alumno.carrera}}</td>
+        <td class="muted">{{alumno.turno}}</td>
         </tr>
+        {% endfor %}
         </tbody>
         </table>
         <!-- /Tabla de alumnos -->
