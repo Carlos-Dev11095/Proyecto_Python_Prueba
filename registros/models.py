@@ -1,6 +1,7 @@
 from msilib.schema import Class
 from tabnanny import verbose
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Alumnos(models.Model): #Define la estructura de nuestra tabla
     matricula = models.CharField(max_length=12,verbose_name="Mat") #texto corto
@@ -21,4 +22,16 @@ class Alumnos(models.Model): #Define la estructura de nuestra tabla
         return self.nombre
         #Indica que se mostrará el nombre como valor de la tabla
 
-
+class Comentario(models.Model):
+    id = models.AutoField(primary_key=True,verbose_name="Clave")
+    alumno = models.ForeignKey(Alumnos,
+    on_delete=models.CASCADE,verbose_name="Alumno")
+    created = models.DateTimeField(auto_now_add=True,verbose_name="Registrado")
+    coment = RichTextField(verbose_name="Comentario")
+    
+class Meta:
+    verbose_name = "Comentario"
+    verbose_name_plural = "Comentarios" 
+    ordering = ["-created"]
+def   str  (self):
+    return self.coment
