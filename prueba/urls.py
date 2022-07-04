@@ -22,9 +22,10 @@ from registros import views as views_registros
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views_registros.registros, name="Principal"),
-    path('contacto/', views.contacto, name="Contacto"),
+    path('contacto/', views_registros.contacto, name="Contacto"),
     path('formulario/', views.formulario, name="Formulario"),
     path('ejemplo/', views.ejemplo, name="Ejemplo"),
+    path('registrar/', views_registros.registrar, name="Registrar"),
 ]
 
 if settings.DEBUG:
