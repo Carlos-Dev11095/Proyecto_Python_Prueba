@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Alumnos
 from .forms import ComentarioContactoForm
+from .models import ComentarioContacto
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -23,3 +25,18 @@ def registrar(request):
 
 def contacto(request):
     return render(request,"registros/contacto.html")
+
+def ComentariosContacto(request):
+    comentarios=ComentarioContacto.objects.all()
+    return render(request,'registros/consultarComentario.html',{'comentarios':comentarios})
+
+def EditarComentarioContacto(request):
+    return render(request,"registros/editarComentario.html")
+
+def eliminarComentarioContacto(request,id, confirmacion='registros/confirmarEliminacion.html'):
+    comentario = get_object_or_404(ComentarioContacto, id=id)
+    if request.method == 'POST':
+        comentario.delete()
+        comentarios=ComentarioContacto.objects.all()
+        return render(request,'registros/consultarComentarios.html',{'comentarios':comentarios})
+    return render(request, confirmacion,{'object':comentario})

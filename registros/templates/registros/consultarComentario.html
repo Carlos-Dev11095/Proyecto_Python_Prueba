@@ -1,0 +1,49 @@
+{% extends "inicio/encabezado.html"%}
+{%block NombrePestaña%}Principal{% endblock %}
+{%load static%}
+
+{%block imagen%}
+{%load static%}
+{%static 'inicio/images/home.png'%}
+{%endblock%}
+
+{%block tituloMenu%}
+Principal <span>DSM</span>
+{%endblock%}
+
+{%block Encabezado%}
+<!--Encabezado -->
+<div class="page-header">
+  <div class="page-title">
+    <h3>
+      Alumnos<br />
+      <small>Lista de Alumnos 9A</small>
+    </h3>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%}
+{%block contenido%}
+<!-- Tabla de Alumnos -->
+<table class="table table-bordered tablestriped">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Comentario</th>
+      <th class="text-center">editar</th>
+      <th class="text-center">eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for comentario in comentarios %}
+    <tr>
+      <td class="muted">{{comentario.usuario}}</td>
+      <td class="muted">{{comentario.mensaje}}</td>
+      <td class="text-center">editar</td>
+      <td class="text-center">eliminar</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<!-- /Tabla de alumnos -->
+{%endblock%}
