@@ -26,7 +26,9 @@ urlpatterns = [
     path('formulario/', views.formulario, name="Formulario"),
     path('ejemplo/', views.ejemplo, name="Ejemplo"),
     path('registrar/', views_registros.registrar, name="Registrar"),
-    path('consutaComentarios/', views_registros.ComentariosContacto, name="consutaComentarios"),
+    path('consultaComentarios/', views_registros.ComentariosContacto, name="consultaComentarios"),
+    path('eliminarComentario/<int:id>/',views_registros.eliminarComentarioContacto,name ="Eliminar"),
+    path('editarComentario/',views_registros.editarComentarioContacto,name ="Editar"),
 ]
 
 if settings.DEBUG:

@@ -28,15 +28,18 @@ def contacto(request):
 
 def ComentariosContacto(request):
     comentarios=ComentarioContacto.objects.all()
-    return render(request,'registros/consultarComentario.html',{'comentarios':comentarios})
+    return render(request,'registros/consultarComentarios.html',{'comentarios':comentarios})
 
 def EditarComentarioContacto(request):
     return render(request,"registros/editarComentario.html")
 
-def eliminarComentarioContacto(request,id, confirmacion='registros/confirmarEliminacion.html'):
+def eliminarComentarioContacto(request,id, confirmacion='registros/eliminarComentarios.html'):
     comentario = get_object_or_404(ComentarioContacto, id=id)
     if request.method == 'POST':
         comentario.delete()
         comentarios=ComentarioContacto.objects.all()
         return render(request,'registros/consultarComentarios.html',{'comentarios':comentarios})
     return render(request, confirmacion,{'object':comentario})
+
+def editarComentarioContacto(request):
+    return render(request,"registros/editarComentarios.html")

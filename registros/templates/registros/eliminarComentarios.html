@@ -1,0 +1,36 @@
+{% extends "inicio/encabezado.html"%}
+{%block NombrePestaña%}Principal{% endblock %}
+{%load static%}
+{%block imagen%}
+{%load static%}
+{%static 'inicio/images/home.png'%}
+{%endblock%}
+{%block tituloMenu%}
+Principal <span>DSM</span>
+{%endblock%}
+{%block Encabezado%}
+<!--Encabezado -->
+<div class="page-header">
+  <div class="page-title">
+    <h3>
+      Alumnos<br />
+      <small>Lista de Alumnos 9A</small>
+    </h3>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%}
+
+{%block contenido%}
+<form method="POST">
+    {%csrf_token%}
+    <!--ALERTA-->
+    <div class="callout callout-danger fade in">
+        <h5>Eliminando Comentarios</h5>
+        <p>¿Estas seguro que deseas <strong>ELIMINAR</strong> el comentario seleccionado?</p>
+    </div>
+    <!--ALERTA-->
+    <button type="submit" class = "btn btn-danger">SI</button>
+    <a href="{%url 'consultaComentarios'%}" class="btn btn-primary">Cancelar</a>
+</form>    
+{%endblock%}
