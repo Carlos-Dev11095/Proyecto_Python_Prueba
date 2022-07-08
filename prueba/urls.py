@@ -29,7 +29,7 @@ urlpatterns = [
     path('consultaComentarios/', views_registros.ComentariosContacto, name="consultaComentarios"),
     path('ConfirmeliminarComentario/<int:id>/',views_registros.ConfirmeliminarComentarioContacto,name ="Eliminar"),
     path('ConfirmeditarComentario/',views_registros.ConfirmeditarComentarioContacto,name ="ConfirmEditar"),
-
+    path('editarComentario/',views_registros.editarComentarioContacto,name ="EditarComentarioContacto"),
 
     
 ]
