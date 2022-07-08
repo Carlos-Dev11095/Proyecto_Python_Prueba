@@ -42,4 +42,4 @@ def ConfirmeditarComentarioContacto(request):
     return render(request,"registros/ConfirmeditarComentarios.html")
 
 def editarComentarioContacto(request):
-        return render(request,'registros/EditarComentario.html')
+    return render(request,"registros/EditarComentario.html")
