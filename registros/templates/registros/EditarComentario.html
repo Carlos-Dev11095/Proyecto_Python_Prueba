@@ -40,38 +40,27 @@ Contacto <span>DSM</span>
     <!--/Encabezado -->
 
     <!-- Formulario -->
-    <form class="form-horizontal" action="{%url 'Registrar'%}" method="POST" role="form">
+    <form class="form-horizontal" action="{%url 'FormEditarComentarioContacto'%}" method="POST" role="form">
         {% csrf_token %}
+    
         <div class="panel panel-default">
             <div class="panel-body">
-
                 <div class="form-group">
                     <label class="col-sm-1 control-label text-left">Nombre:</label>
                     <div class="col-sm-10">
-                        <textarea name="usuario" cols="50" rows="10" class="form-control">
-                            {{comentario.usuario}}
-                        </textarea>
+                        <input type="text" name="usuario" class="form-control">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label class="col-sm-2 control-label text-right">id:{{comentario.id}} comentario</label>
+                    <label class="col-sm-1 control-label text-left">Mensaje:</label>
                     <div class="col-sm-10">
-                        <p> <textarea name="mensaje" cols="50" rows="10" class="form-control">
-                            {{comentario.mensaje}}
-                        </textarea></p>
+                        <p><textarea cols="50" name="mensaje" rows="10" class="form-control"></textarea></p>
                         <div class="form-actions text-left">
                             <input type="submit" value="Enviar" class="btn btn-primary">
                         </div>
-
                     </div>
                 </div>
-
-                
-
-            </div>
-        </div>
-    </form>
+            </form>
     <!-- Fin del Formulario -->
 </div>
 <!-- /Contenido Principal-->
