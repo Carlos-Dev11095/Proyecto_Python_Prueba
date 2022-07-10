@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>{%block NombrePestaña%}{%endblock%}</title>
+<title>{%block NombrePestaña%}{% endblock %}</title>
 {%load static%}
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/londinium-theme.css'%}" rel="stylesheet" type="text/css">
@@ -60,10 +60,9 @@
 			<div class="sidebar-content">
 				<ul class="navigation">
                             <li><a href="{%url 'Principal'%}">Principal</a></li>
-                            <li><a href="{%url 'Formulario'%}">Registro</a></li>
-							<li><a href="{%url 'Contacto'%}">Comentarios</a></li>
-                            <li><a href="{%url 'consultaComentarios'%}">Consulta</a></li>
-                            <li><a href="{%url 'FormEditarComentarioContacto'%}">EditComent</a></li>
+                            <li><a href="{%url 'Formulario'%}">Registro</a></li>	
+                            <li><a href="{%url 'Contacto'%}">Contacto</a></li>
+                            <li><a href="{%url 'consultarComentarios'%}">Comentarios</a></li>	
 				</ul>
 			<!-- /Fin menú -->
 

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>{%block titulo%} Ejemplo {%endblock%}</title>
+<title>Plantilla</title>
 
 {%load static%}
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
-<link href="{% static 'css/londinium-theme.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'inicio/css/londinium-theme.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/styles.css'%}" rel="stylesheet" type="text/css">
-<link href="{% static 'inicio/css/icons.css'%" rel="stylesheet" type="text/css">
+<link href="{% static 'inicio/css/icons.css'%}" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -60,25 +60,20 @@
 		<div class="sidebar">
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
-
 				<ul class="navigation">
-							<li><a href="{%url 'Principal'%}">Principal</a></li>
-							<li><a href="{%url 'Formulario'%}">Registro</a></li>
-                            <li><a href="{%url 'Contacto'%}">Contacto</a></li>		
+                            <li><a href="{%url 'Principal'%}">Home></a></li>
+                            <li><a href="{%url 'Contacto'%}">Contacto></a></li>
+                            <li><a href="{%url 'Formulario'%}">Formulario></a></li>	
+
 				</ul>
 				<!-- /Fin menú -->
 			</div>
 		</div>
-		<!-- /sidebar -->
-	</div>
-
+	<!-- /sidebar -->
     <!-- CONTENIDO -->
-
-{% block contenido %} <!--Template Tag-->
-
-<!--block sirve para indicar que colocaremos un bloque de
-contenido a través de nuestra variable content -->
-
-{% endblock %}
+         {% block contenido %} <!--Template Tag-->
+             <!--block sirve para indicar que colocaremos un bloque de
+             contenido a través de nuestra variable content -->
+        {% endblock %}
 </body>
 </html>

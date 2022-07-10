@@ -5,6 +5,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 class Alumnos(models.Model): #Define la estructura de nuestra tabla
+    id = models.AutoField(primary_key=True,verbose_name="id")
     matricula = models.CharField(max_length=12,verbose_name="Mat") #texto corto
     nombre = models.TextField() #Texto largo
     carrera = models.TextField()

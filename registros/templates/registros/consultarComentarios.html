@@ -1,45 +1,44 @@
-{% extends "inicio/encabezado.html"%}
-{%block NombrePestaña%}Principal{% endblock %}
+{%extends "inicio/encabezado.html"%}
+
+{%block NombrePestaña%}Comentarios Consulta{%endblock%}
 {%load static%}
 
 {%block imagen%}
-{%load static%}
-{%static 'inicio/images/home.png'%}
+{%static 'inicio/images/correo.png'%}
 {%endblock%}
 
 {%block tituloMenu%}
-Principal <span>DSM</span>
+Consulta<span>DSM</span>
 {%endblock%}
 
 {%block Encabezado%}
-<!--Encabezado -->
+<!--Encabezdo -->
 <div class="page-header">
   <div class="page-title">
-    <h3>
-      Alumnos<br />
-      <small>Lista de Alumnos 9A</small>
-    </h3>
+    <h3>Comentarios
+      <small>Consulta de comentarios</small></h3>
   </div>
 </div>
 <!-- /Encabezado-->
 {%endblock%}
-{%block contenido%}
+
+{% block contenido%}
 <!-- Tabla de Alumnos -->
-<table class="table table-bordered tablestriped">
+<table name= "comentarios" class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Usuario</th>
-      <th>Comentario</th>
-      <th class="text-center">editar</th>
-      <th class="text-center">eliminar</th>
+      <th>Mensaje</th>
+      <th class="text-center">Editar</th>
+      <th class="text-center">Eliminar</th>
     </tr>
   </thead>
   <tbody>
     {% for comentario in comentarios %}
     <tr>
-      <td class="muted">{{comentario.usuario}}</td>
+      <td class="text-semibold">{{comentario.usuario}}</td>
       <td class="muted">{{comentario.mensaje}}</td>
-      <td class="text-center"><a href="{%url 'ConfirmEditar'%}">Editar</a></td>
+      <td class="text-center"><a href="{%url 'consultarComentario' comentario.id%}">Editar</a></td>
       <td class="text-center"><a href="{%url 'Eliminar' comentario.id%}">Eliminar</a></td>
     </tr>
     {% endfor %}

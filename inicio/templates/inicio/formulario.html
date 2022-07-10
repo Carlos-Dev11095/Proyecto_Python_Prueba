@@ -1,88 +1,75 @@
-{%extends "inicio/encabezado.html"%}
+{%extends "inicio/encabezado.html" %} 
 
-{%block NombrePestaña%}Formulario{% endblock %}
-{%load static%}
+{%block NombrePestaña%} Formulario {%endblock%}
+{%load static%} 
 
-{%block imagen%}
+{%block imagen%} 
 {%static 'inicio/images/registro.png'%}
 {%endblock%}
 
-{%block tituloMenu%}
-Formulario <span>DSM</span>
-{%endblock%}
+{%block tituloMenu%} 
+Formulario <span>SDM</span>
+{%endblock%} 
 
 {%block Encabezado%}
- <!--Encabezado -->
- <div class="page-header">
-    <div class="page-title">
-        <h3>Regístrate<br>
-        <small>Formulario de registro de usuarios</small></h3>
-    </div>
-    
+<!--Encabezdo -->
+<div class="page-header">
+  <div class="page-title">
+    <h3>Regístrate<br>
+      <small>Formulario de registro de usuarios</small></h3>
+  </div>
 </div>
 <!-- /Encabezado-->
 {%endblock%}
 
 {%block contenido%}
-        <div class="page-content">
+  <div class="page-content">
+<!-- Formulario -->
+<form class="form-horizontal" action="#" role="form">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="col-sm-1 control-label text-left">Matricula:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" />
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label class="col-sm-1 control-label text-left">Nombre:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" />
+        </div>
+      </div>
 
-			<!-- Encabezado
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Registro <br>
-				    <small>Ingresa tu información</small></h3>
-				</div>
+      <div class="form-group">
+        <label class="col-sm-1 control-label text-left">Carrera:</label>
+        <div class="col-sm-10">
+          <select data-placeholder="Elige una carrera..." class="select" tabindex="2">
+                      <option value="">Elige una carrera</option> 
+                      <option value="win7">TIC</option> 
+                      <option value="win8">BIO</option> 
+                      <option value="macos">MAI</option> 
+              </select>
+        </div>
+    </div>
 
-			</div>
-			/Encabezado -->
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-left">Turno:</label>
+      <div class="col-sm-10">
+        <input type="radio" name="turno" class="styled" checked="checked"> Matutino
+        <input type="radio" name="turno" class="styled"> Vespertino
+      </div>
+  </div>
 
-			<!-- Formulario -->
-			<form class="form-horizontal" action="#" role="form">
-	            <div class="panel panel-default">
-	                <div class="panel-body">
+      <div class="form-actions text-left">
+        <input type="submit" value="Enviar" class="btn btn-primary" />
+      </div>
 
-				        <div class="form-group">
-				            <label class="col-sm-1 control-label text-right">Matricula:</label>
-				            <div class="col-sm-10">
-				            	<input type="text" class="form-control">
-				            </div>
-				        </div>
-				        
-				        <div class="form-group">
-				            <label class="col-sm-1 control-label text-right">Nombre:</label>
-				            <div class="col-sm-10">
-				            	<input type="text" class="form-control">
-				            </div>
-				        </div>
-						<div class="form-group">
-				            <label class="col-sm-1 control-label text-right">Carrera:</label>
-				            <div class="col-sm-10">
-				            	<select data-placeholder="Elige una carrera..." class="select" tabindex="2">
-	                                <option value="">Elige una carrera</option> 
-	                                <option value="win7">TIC</option> 
-	                                <option value="win8">BIO</option> 
-	                                <option value="macos">MAI</option> 
-	                        </select>
-				            </div>
-				        </div>
-						<div class="form-group">
-				            <label class="col-sm-1 control-label text-right">Turno:</label>
-				            <div class="col-sm-10">
-				            	<input type="radio" name="turno" class="styled" checked="checked"> Matutino
-											<input type="radio" name="turno" class="styled"> Vespertino
-				            </div>
-				        </div>
-				        
-                        <div class="form-actions text-left">
-                        	<input type="submit" value="Enviar" class="btn btn-primary">
-                        </div>
-
-				    </div>
-				</div>
-			</form>
-		<!-- Fin del Formulario -->
-		</div>
-		<!-- /Contenido Principal-->
-
+      <div class="form-actions text-left">
+        <a href="{%url 'Principal'%}" class="btn btn-danger">Cancelar</a>
+    </div>
+  </div>
+</form>
+<!-- Fin del Formulario -->
 {%endblock%}

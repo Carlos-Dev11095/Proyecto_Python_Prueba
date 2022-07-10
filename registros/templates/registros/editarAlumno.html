@@ -1,19 +1,21 @@
 {%extends "inicio/encabezado.html"%}
 
-{%block NombrePestaña%}Editar Comentario{%endblock%}
+{%block NombrePestaña%}Principal
+{%endblock%}
 
 {%block imagen%}
 {%load static%}
-{%static 'inicio/images/comment.png'%}
+{%static 'inicio/images/home.png'%}
 {%endblock%}
 
-{%block tituloMenu%}Editar Comentario{%endblock%}
+{%block tituloMenu%}Editar Alumno
+{%endblock%} 
 
 {%block Encabezado%}
 <!--Encabezdo -->
 <div class="page-header">
   <div class="page-title">
-    <h3>Edita<small>los comentarios</small></h3>
+    <h3>Editar Alumnos <small>Editar los alumnos</small></h3>
   </div>
 </div>
 <!-- /Encabezado-->
@@ -22,38 +24,35 @@
 {% block contenido%}
 <form
   class="form-horizontal"
-  action="{% url 'Editar' comentario.id%}"
+  action="{% url 'EditarAlumno' alumno.id%}"
   method="POST"
-  role="form">
+  role="form"
+>
   {%csrf_token%}
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="form-group">
-        <label class="col-sm-1 control-label text-left">Nombre:</label>
+        <label class="col-sm-2 control-label text-right">Nombre:</label>
         <div class="col-sm-10">
-          <textarea name="usuario" cols="11" rows="1" class="form-control">
-{{comentario.usuario}}
+          <textarea name="nombre" cols="11" rows="1" class="form-control">
+{{alumno.nombre}}
   </textarea
           >
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-1 control-label text-left">Comentario:</label>
+        <label class="col-sm-2 control-label text-right"> Carrera</label>
         <div class="col-sm-10">
-          <textarea name="mensaje" cols="10" rows="2" class="form-control">
-{{comentario.mensaje}}
-      </textarea
-          >
+          <textarea name="carrera" cols="10" rows="2" class="form-control">
+{{alumno.carrera}}
+      </textarea>
         </div>
       </div>
       <div class="form-actions text-left">
         <input type="submit" value="Guardar" class="btn btn-primary" />
       </div>
-
       <div class="form-actions text-left">
-        <a href="{%url 'consultarComentarios'%} " class="btn btn-danger">Cancelar</a>
-      </div>
-
+      <a href="{%url 'Principal'%}" class="btn btn-danger">Cancelar</a>
     </div>
   </div>
 </form>
