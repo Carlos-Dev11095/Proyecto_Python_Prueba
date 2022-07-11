@@ -35,11 +35,11 @@ Consulta<span>DSM</span>
   </thead>
   <tbody>
     {% for comentario in comentarios %}
-    <tr>
+    <tr> 
       <td class="text-semibold">{{comentario.usuario}}</td>
       <td class="muted">{{comentario.mensaje}}</td>
-      <td class="text-center"><a href="{%url 'consultarComentario' comentario.id%}">Editar</a></td>
-      <td class="text-center"><a href="{%url 'Eliminar' comentario.id%}">Eliminar</a></td>
+      <td class="text-center"><a href="{%url 'consultarComentario' comentario.id%}"  class="btn btn-warning" >Editar</a></td>
+      <td class="text-center"><a href="{%url 'Eliminar' comentario.id%}"  class="btn btn-danger" >Eliminar</a></td>
     </tr>
     {% endfor %}
   </tbody>

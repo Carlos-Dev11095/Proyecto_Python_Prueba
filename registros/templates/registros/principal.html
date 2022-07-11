@@ -44,8 +44,8 @@
       <td class="muted">{{alumno.nombre}}</td>
       <td class="muted">{{alumno.carrera}}</td>
       <td class="muted">{{alumno.turno}}</td>
-      <td class="text-center"><a href="{%url 'consultarAlumno' alumno.id%}">Editar</a></td>
-      <td class="text-center"><a href="{%url 'EliminarAlumno' alumno.id%}">Eliminar</a></td>
+      <td class="text-center"><a href="{%url 'consultarAlumno' alumno.id%}"  class="btn btn-primary" >Editar</a></td>
+      <td class="text-center"><a href="{%url 'EliminarAlumno' alumno.id%}"  class="btn btn-danger" >Eliminar</a></td>
     </tr>
     {% endfor %}
   </tbody>
