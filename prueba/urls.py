@@ -40,6 +40,15 @@ urlpatterns = [
     path('editarAlumno/<int:id>/',views_registros.consultarAlumno,name ="consultarAlumno"),
     path('guadarAlumnos/<int:id>/',views_registros.editarAlumnos,name ="EditarAlumno"),
 
+    path('consultas1',views_registros.consultar1,name="Consultas"),
+    path('consultas2',views_registros.consultar2,name="Consultas"),
+    path('consultas3',views_registros.consultar3,name="Consultas"),
+    path('consultas4',views_registros.consultar4,name="Consultas"),
+    path('consultas5',views_registros.consultar5,name="Consultas"),
+    path('consultas6',views_registros.consultar6,name="Consultas"),
+    path('consultas7',views_registros.consultar7,name="Consultas"),
+
+
 ]
 
 if settings.DEBUG:

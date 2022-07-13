@@ -1,8 +1,10 @@
+from datetime import datetime
 from django.shortcuts import render
 from .models import Alumnos
 from .forms import AlumnoForms, ComentarioContactoForm
 from .models import ComentarioContacto
 from django.shortcuts import get_object_or_404
+import datetime
 # Create your views here.
 
 def registros(request):
@@ -75,3 +77,33 @@ def editarAlumnos(request,id):
         alumnos=Alumnos.objects.all()
         return render(request,'registros/principal.html',{'alumnos':alumnos})
     return render(request,'registros/editarAlumno.html',{'alumno':alumno})
+
+def consultar1(request):
+    alumnos=Alumnos.objects.filter(carrera="TI")
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+def consultar2(request):
+    alumnos=Alumnos.objects.filter(carrera="TI").filter(turno="Matutino")
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+def consultar3(request):
+    alumnos=Alumnos.objects.all().only("matricula","nombre","carrera","turno","imagen")
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+def consultar4(request):
+    alumnos=Alumnos.objects.filter(turno__contains="Vespertino")
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+def consultar5(request):
+    alumnos=Alumnos.objects.filter(nombre__in=["Juan","Ana"])
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+def consultar6(request):
+    fechaInicio= datetime.date(2022,7,1)
+    fechaFin= datetime.date(2022,7,13)
+    alumnos=Alumnos.objects.filter(created__range=(fechaInicio,fechaFin))
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+def consultar7(request):
+    alumnos=Alumnos.objects.filter(comentario__coment__contains="hola")
+    return render(request,"registros/consultas.html",{'alumnos':alumnos})
