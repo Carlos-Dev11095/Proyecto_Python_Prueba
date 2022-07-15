@@ -107,3 +107,5 @@ def consultar6(request):
 def consultar7(request):
     alumnos=Alumnos.objects.filter(comentario__coment__contains="hola")
     return render(request,"registros/consultas.html",{'alumnos':alumnos})
+
+

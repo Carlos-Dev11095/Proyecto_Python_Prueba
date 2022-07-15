@@ -1,5 +1,6 @@
 from msilib.schema import Class
 from tabnanny import verbose
+from turtle import update
 from venv import create
 from django.db import models
 from ckeditor.fields import RichTextField
@@ -52,4 +53,20 @@ class ComentarioContacto(models.Model):
         #El - indica que se ordena del más reciente al mas viejo
     
     def __str__(self):
-        return self.mensaje	
+        return self.mensaje
+
+class Archivos(models.Model):
+    id = models.AutoField(primary_key=True,verbose_name="Clave")
+    titulo= models.CharField(max_length=100,null=True,verbose_name="Titulo")
+    archivo = models.FileField(upload_to="archivos", null=True, blank=True)
+    created = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Archivo"
+        verbose_name_plural = "Archivos"
+        ordering = ["-created"]
+
+    def __str__(self):
+        return self.titulo
+

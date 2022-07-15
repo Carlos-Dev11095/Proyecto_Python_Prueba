@@ -1,6 +1,7 @@
 from django.contrib import admin
 from registros.models import Alumnos
 from .models import Comentario, ComentarioContacto
+from .models import Archivos
 
 # Register your models here.
 
@@ -35,3 +36,10 @@ class AdministrarComentariosContactos(admin.ModelAdmin):
     date_hierarchy = 'created'
     readondly_fields = ('created', 'id')
 admin.site.register(ComentarioContacto, AdministrarComentariosContactos)
+
+class AdminArchivos(admin.ModelAdmin):
+    list_display = ('id', 'archivo')
+    search_fields = ('id', 'archivo')
+    date_hierarchy = 'created'
+    readondly_fields = ('created', 'id')
+admin.site.register(Archivos, AdminArchivos)
