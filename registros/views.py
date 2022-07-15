@@ -1,10 +1,10 @@
-from datetime import datetime
 from django.shortcuts import render
-from .models import Alumnos
-from .forms import AlumnoForms, ComentarioContactoForm
+from .models import Alumnos, Archivos
+from .forms import AlumnoForms, ComentarioContactoForm, FormArchivos
 from .models import ComentarioContacto
 from django.shortcuts import get_object_or_404
 import datetime
+from django.contrib import messages
 # Create your views here.
 
 def registros(request):
@@ -108,4 +108,17 @@ def consultar7(request):
     alumnos=Alumnos.objects.filter(comentario__coment__contains="hola")
     return render(request,"registros/consultas.html",{'alumnos':alumnos})
 
-
+def archivos(request):
+    if request.method == 'POST':
+        form = FormArchivos(request.POST, request.FILES)
+        if form.is_valid():
+            titulo = request.POST['titulo']
+            descripcion=request.POST['descripcion']
+            archivo=request.FILES['archivo']
+            insert= Archivos(titulo=titulo,descripcion=descripcion,archivo=archivo)
+            insert.save()
+            return render(request,'registros/archivos.html')
+        else:
+          messages.error(request, 'Error al procesar el formulario')
+    else:
+        return render(request,'registros/archivos.html',{'archivos':Archivos})

@@ -1,4 +1,5 @@
 from msilib.schema import Class
+from pydoc import describe
 from tabnanny import verbose
 from turtle import update
 from venv import create
@@ -58,6 +59,7 @@ class ComentarioContacto(models.Model):
 class Archivos(models.Model):
     id = models.AutoField(primary_key=True,verbose_name="Clave")
     titulo= models.CharField(max_length=100,null=True,verbose_name="Titulo")
+    descripcion = models.TextField(null=True,verbose_name="Descripcion")
     archivo = models.FileField(upload_to="archivos", null=True, blank=True)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now_add=True)

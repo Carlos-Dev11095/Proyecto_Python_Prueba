@@ -48,6 +48,8 @@ urlpatterns = [
     path('consultas6',views_registros.consultar6,name="Consultas"),
     path('consultas7',views_registros.consultar7,name="Consultas"),
 
+    path('SubirArchivos',views_registros.archivos,name ="SubirArchivos"),
+
 
 ]
 
