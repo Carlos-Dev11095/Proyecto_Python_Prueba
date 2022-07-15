@@ -122,3 +122,7 @@ def archivos(request):
           messages.error(request, 'Error al procesar el formulario')
     else:
         return render(request,'registros/archivos.html',{'archivos':Archivos})
+
+def consultasSQL(request):
+    alumnos=Alumnos.objects.raw('SELECT id, matricula,nombre,carrera,turno,imagen FROM registros_alumnos WHERE carrera="TI" ORDER BY turno DESC')
+    return render(request, 'registros/consultas.html',{'alumnos':alumnos})

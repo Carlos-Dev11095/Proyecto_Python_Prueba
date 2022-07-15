@@ -50,6 +50,7 @@ urlpatterns = [
 
     path('SubirArchivos',views_registros.archivos,name ="SubirArchivos"),
 
+    path('consultasSQL',views_registros.consultasSQL,name ="sql"),
 
 ]
 
