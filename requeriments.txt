@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 Pillow==9.1.1
 django==4.0.5
 django-ckeditor==6.4.2
 PyMySQL==1.0.2
-=======
-
->>>>>>> 75234cae1671306a190970e20dcd4d26460036e7
