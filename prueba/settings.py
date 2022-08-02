@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-91@%jlkclh$gyi=ult@1%v6)!6n7j!!a*83x63#(rapbou54sm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://wwwcarchack11095.pythonanywhere.com','localhost=http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -82,10 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ejemplo',
-        # 'USER': 'carlos',
-        # 'PASSWORD': 'c@rl0526',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'carlos',
+        'PASSWORD': 'c@rl0526',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -114,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-us'
 
 TIME_ZONE = 'UTC'
 
