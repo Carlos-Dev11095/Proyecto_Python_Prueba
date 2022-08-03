@@ -8,10 +8,10 @@ from ckeditor.fields import RichTextField
 
 class Alumnos(models.Model): #Define la estructura de nuestra tabla
     id = models.AutoField(primary_key=True,verbose_name="id")
-    matricula = models.CharField(max_length=12,verbose_name="Mat") #texto corto
+    matricula = models.CharField(max_length=12,verbose_name="Matrícula") #texto corto
     nombre = models.TextField() #Texto largo
     carrera = models.TextField()
-    turno = models.TextField(max_length=10)
+    turno = models.CharField(max_length=10)
     imagen = models.ImageField(null=True,upload_to="fotos",verbose_name="Fotografía")
     created = models.DateField(auto_now_add=True) #Fecha y tiempo
     updated = models.DateField(auto_now_add=True) #Fecha y tiempo

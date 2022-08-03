@@ -1,43 +1,38 @@
-{%extends "inicio/encabezado.html"%}
-{%block NombrePestaña%}Principal
-{%endblock%}
-{%load static%}
-
-{%block imagen%} 
-{%static 'inicio/images/home.png'%}
-{%endblock%}
-
-{%block tituloMenu%}Principal
+{%extends "inicio/encabezado.html"%} {%block NombrePestaña%}Principal
+{%endblock%} {%load static%} {%block imagen%} {%static
+'inicio/images/home.png'%} {%endblock%} {%block tituloMenu%}Principal
 <span>DSM</span>
-{%endblock%} 
-
-{%block Encabezado%}
+{%endblock%} {%block Encabezado%}
 <!--Encabezdo -->
 <div class="page-header">
   <div class="page-title">
-    <h3>Alumnos<br>
-      <small>Lista de Alumnos 9A</small></h3>
+    <h3>
+      Alumnos<br />
+      <small>Lista de Alumnos 9A</small>
+    </h3>
   </div>
 </div>
 <!-- /Encabezado-->
-{%endblock%}
-{% block contenido%}
+{%endblock%} {% block contenido%}
 
-<body>
-    <form method = "GET">
-        Nombre:
-        <input type="text" name = "nombre"/>
-        <input type="submit" name = "Buscar" value="Buscar" />
-    </form>
-    <h2>Resultado:{{nombre|safe}}</h2>
-    <img src="https://media.giphy.com/media/26tk0jALFpsXmAF8c/giphy.gif" alt="">
-    <!--busqueda-->
-    <script type="application/javascript">
-        var busqueda= new URLSearchParams(document.location.search);
-        if(busqueda.has("nombre")){
-            document.getElementById("resultado").innerHTML="Resultado: " + busqueda.get("nombre")
-        }
-    </script>
-    <!--busqueda-->
-</body>
+<html>
+    <body>
+        <form method = "GET">
+            Nombre:
+            <input type="text" name = "nombre"/>
+            <input type="submit" name = "Buscar"/>
+        </form>
+        <h2>Resultado:{{nombre|safe}}</h2>
+        <img src="https://media.giphy.com/media/26tk0jALFpsXmAF8c/giphy.gif"/>
+
+        <!--busqueda-->
+        <script type="application/javascript">
+            var busqueda= new URLSearchParams(document.location.search);
+            if(busqueda.has("nombre")){
+                document.getElementById("resultado").innerHTML="Resultado: " + busqueda.get("nombre")
+            }
+        </script>
+        <!--busqueda-->
+    </body>
+</html>
 {%endblock%}
