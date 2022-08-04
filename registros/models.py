@@ -1,8 +1,3 @@
-from msilib.schema import Class
-from pydoc import describe
-from tabnanny import verbose
-from turtle import update
-from venv import create
 from django.db import models
 from ckeditor.fields import RichTextField
 
