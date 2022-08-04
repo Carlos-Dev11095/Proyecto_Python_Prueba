@@ -1,4 +1,3 @@
-from msilib.schema import Class
 from tabnanny import verbose
 from django.db import models
 
